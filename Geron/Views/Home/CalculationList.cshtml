@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Geron.Models.Triangle>
+
+<div class="text-center">
+    <h1>List of calculations</h1>
+    <table class="table table-striped table-bordered" style="width: 700px; margin: 0 auto;">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Date</th>
+                <th scope="col">a</th>
+                <th scope="col">b</th>
+                <th scope="col">c</th>
+                <th scope="col" style="border-left: 1px solid #000">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var triangle in Model)
+            {
+                <tr>
+                    <td>@triangle.Date</td>
+                    <td>@triangle.a</td>
+                    <td>@triangle.b</td>
+                    <td>@triangle.c</td>
+                    <td style="border-left: 1px solid #000;">@triangle.S</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

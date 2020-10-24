@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Geron.Models.Triangle
+
+<header class="text-center">
+    <h1><strong>Welcome</strong> to Geron's formula Calculator</h1>
+    <hr />
+</header>
+<main>
+    <figure class="figure w-100 text-center mx-auto">
+        <img src="https://fsd.kopilkaurokov.ru/up/html/2020/04/13/k_5e9454854509c/546442_6.png" width="500" class="figure-img img-fluid rounded" alt="Geron's formula" />
+        <figcaption class="figure-caption"><h3>Geron's Formula</h3></figcaption>
+    </figure>
+
+    <br />
+    <h4 class="text-center">Enter your values(a, b, c) and we calculate the Triangle Area: </h4>
+    <form method="post" asp-page="/Home/Index">
+        <div class="row justify-content-center">
+            <div class="form-group col-3 form-inline">
+                <label for="a" style="font-size: 30px">a:</label>
+                <input type="number" step="0.01" class="form-control" id="a" name="a" required>
+            </div>
+            <div class="form-group col-3 form-inline">
+                <label for="b" style="font-size: 30px">b: </label>
+                <input type="number" step="0.01" class="form-control" id="b" name="b" required>
+            </div>
+            <div class="form-group col-3 form-inline">
+                <label for="c" style="font-size: 30px">c: </label>
+                <input type="number" step="0.01" class="form-control" id="c" name="c" required>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
+        </div>
+    </form>
+
+    @if (ViewBag.S != null)
+    {
+        <div class="text-center mt-5 border border-primary rounded" style="width: 300px; padding: 15px; margin: 0 auto">
+            <h4 style="font-weight: normal">@ViewBag.S</h4>
+        </div>
+    }
+    <div class="text-center mt-5">
+        <a href="/Home/CalculationList">See list of all calculations</a>
+    </div>
+    
+
+</main>
